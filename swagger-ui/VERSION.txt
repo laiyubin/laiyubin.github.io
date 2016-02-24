@@ -1,0 +1,1 @@
+https://github.com/aleung/swagger-ui/tree/develop_2.0 (commit ef353b)

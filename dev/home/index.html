@@ -1,0 +1,753 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Overview</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v2.4.0">
+  <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+  
+    <link href='/swagger-ui/css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='/swagger-ui/css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='/swagger-ui/css/print.css' media='print' rel='stylesheet' type='text/css'/>
+  <link href='/swagger-ui/css/ecebook.css' rel='stylesheet' type='text/css'/>
+  
+  <script src='/swagger-ui/lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/jquery.slideto.min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/jquery.wiggle.min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/handlebars-2.0.0.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/underscore-min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/backbone-min.js' type='text/javascript'></script>
+  <script src='/swagger-ui/swagger-ui.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/highlight.7.3.pack.js' type='text/javascript'></script>
+  <script src='/swagger-ui/lib/marked.js' type='text/javascript'></script>
+  
+  
+  <script type="text/javascript">
+    function loadSwaggerUi(url, domId) {
+      var ui = new SwaggerUi({
+        url: url,
+        dom_id: domId,
+        supportedSubmitMethods: [],
+        onComplete: function(swaggerApi, swaggerUi){
+          $('pre code').each(function(i, e) {
+            hljs.highlightBlock(e)
+          });
+        },
+        onFailure: function(data) {
+          log("Unable to Load SwaggerUI");
+        },
+        docExpansion: "list",
+        sorter : "alpha"
+      });
+      ui.load();
+    }
+    
+    function log() {
+      if ('console' in window) {
+        console.log.apply(console, arguments);
+      }
+    }
+  </script>
+
+</head>
+
+
+<body class="wrap">
+  <header>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/design/home/">Design</a>
+  </li>
+  <li class="current">
+    <a href="/dev/home/">Development</a>
+  </li>
+  <li class="">
+    <a href="/project/home/">Project</a>
+  </li>
+  <li class="">
+    <a href="/topics.html">Topics</a>
+  </li>
+  <li class="">
+    <a href="/help/">Help</a>
+  </li>
+  <li class="">
+    <a href="/search.html">Search</a>
+  </li>
+</ul>
+
+  </nav>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <h1>
+        <a href="/">
+          <span>SEP book</span>
+          <img src="/img/sep-book.png" alt="Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav unit two-thirds hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/design/home/">Design</a>
+  </li>
+  <li class="current">
+    <a href="/dev/home/">Development</a>
+  </li>
+  <li class="">
+    <a href="/project/home/">Project</a>
+  </li>
+  <li class="">
+    <a href="/topics.html">Topics</a>
+  </li>
+  <li class="">
+    <a href="/help/">Help</a>
+  </li>
+  <li class="">
+    <a href="/search.html">Search</a>
+  </li>
+</ul>
+
+    </nav>
+  </div>
+</header>
+
+
+  <section class="docs">
+    <div class="grid">
+      <!--<div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+    <optgroup label="">
+      
+
+
+
+    </optgroup>
+    
+    <optgroup label="">
+      
+
+
+
+    </optgroup>
+    
+    <optgroup label="">
+      
+
+
+
+    </optgroup>
+    
+    <optgroup label="">
+      
+
+
+
+    </optgroup>
+    
+  </select>
+</div>
+-->
+
+<div class="unit four-fifths">
+  <article>
+    <h1 class="note title">Overview</h1>
+    <ul id="markdown-toc">
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#apply-accounts-and-permissions">Apply Accounts and Permissions</a></li>
+  <li><a href="#msdp-development-environment">MSDP Development environment</a>    <ul>
+      <li><a href="#general-information">General information</a></li>
+      <li><a href="#development">Development</a></li>
+      <li><a href="#test">Test</a></li>
+      <li><a href="#misc">MISC.</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>If you work for ECE project, please turn to <a href="http://ece-book.sh.cn.ao.ericsson.se/dev/home/">ECE BOOK</a>.</p>
+
+<p>If you work for SES project, please turn to <a href="http://ses-book.sh.cn.ao.ericsson.se/dev/home/">SES BOOK</a>.</p>
+
+<h2 id="apply-accounts-and-permissions">Apply Accounts and Permissions</h2>
+<p>To start your work for MSDP project or other SEP components (such as Dispatcher, M2M DM, etc), please follow <a href="http://cnshrdweb.sh.cn.ao.ericsson.se/MSDP/page-contents/Preparation.ppt">this guide</a> to apply accounts and permissions, then you could access the development environment. </p>
+
+<h2 id="msdp-development-environment">MSDP Development environment</h2>
+
+<h3 id="general-information">General information</h3>
+<ul>
+  <li><a href="http://wiki.drutt.com">WIKI</a> - lots of info about process, design, test, UX and so on
+    <ul>
+      <li><a href="http://wiki.msdp.sh.cn.ao.ericsson.se/sad:index">SAD</a> - high level system architect</li>
+      <li><a href="http://wiki.msdp.sh.cn.ao.ericsson.se/misc:cpi:index">CPI</a> - MSDP document	</li>
+    </ul>
+  </li>
+  <li>Training materials
+    <ul>
+      <li>\\ecngzntinf2\cgcgroup\Workshops_Trainings\MSDP Workshops &amp; Trainings</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="development">Development</h3>
+<ul>
+  <li><a href="https://hubcnsh.ericsson.se/Citrix/XenApp/auth/login.aspx">WDP Citrix</a> - Windows Desktop (WDP) used to access the development environment hosting in Shanghai Hub.
+    <ul>
+      <li>send Email to release team to request WDP</li>
+    </ul>
+  </li>
+  <li><a href="http://agilo.msdp.sh.cn.ao.ericsson.se/msdp">Agilo</a> - requirement/user story management</li>
+  <li>Version control
+    <ul>
+      <li><a href="https://eforge.ericsson.se/sf/projects/multiservice_delivery_platform/">eForge</a> - GIT repo &amp; gerrit review
+        <ul>
+          <li><a href="http://ci.msdp.sh.cn.ao.ericsson.se/MSDP_GIT/MSDP_Working_in_eForge.pdf">How-to-use</a></li>
+          <li>Used since MSDP15.1</li>
+        </ul>
+      </li>
+      <li><a href="http://svn.msdp.sh.cn.ao.ericsson.se/dev">SVN</a>
+        <ul>
+          <li>Used before MSDP15.1</li>
+          <li>Some shared components,e.g. dtasks, still use SVN</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://msdp.opengrok.sh.cn.ao.ericsson.se/source/">OpenGrok</a> - code search</li>
+  <li>tools
+    <ul>
+      <li>IDE
+        <ul>
+          <li><a href="https://eclipse.org/downloads/">eclipse</a>, or</li>
+          <li><a href="https://www.jetbrains.com/idea/">intellij idea community</a></li>
+        </ul>
+      </li>
+      <li><a href="https://maven.apache.org/">Maven</a> (3.0.4)
+        <ul>
+          <li><a href="/development/index/settings.xml">settings.xml</a> - change the ‘localRepository’ to your own</li>
+        </ul>
+      </li>
+      <li>JDK 1.7</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="test">Test</h3>
+<ul>
+  <li><a href="http://ci.msdp.sh.cn.ao.ericsson.se/bookingserver">Test server booking</a> - book your test server before use</li>
+  <li><a href="http://cnshrdweb.sh.cn.ao.ericsson.se/MSDP/">MSDP lab information</a> - it has
+    <ul>
+      <li>license server info</li>
+      <li>instruction about creating DB account</li>
+    </ul>
+  </li>
+  <li><a href="http://testlink.msdp.sh.cn.ao.ericsson.se/index.php">Testlink</a> - test spec management. <strong>IE only</strong>.</li>
+  <li><a href="http://druttzilla.msdp.sh.cn.ao.ericsson.se/bugstatus/bugscore-msdp.jsp">Druttzilla</a> - bug management</li>
+  <li>tools
+    <ul>
+      <li>Jmeter</li>
+      <li>SoapUI</li>
+      <li>HttpRequester</li>
+      <li>Browser
+        <ul>
+          <li>Firefox: firebug, rest client, modify-headers, User-agent switcher…</li>
+          <li>Chrome: postman…</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://ci.msdp.sh.cn.ao.ericsson.se/">Jenkins</a> </li>
+  <li><a href="http://ci.msdp.sh.cn.ao.ericsson.se/msdp-performance/">CPDT</a></li>
+</ul>
+
+<h3 id="misc">MISC.</h3>
+<ul>
+  <li><a href="http://www.debugmode.com/wink/">WINK</a> - demo recorder</li>
+  <li><a href="https://bazaar.internal.ericsson.com/index.php?search=postgresql&amp;categorysearchdropdown=1">Bazaar</a> - search the 3PP used in Ericsson</li>
+</ul>
+
+    <!--<div class="section-nav">
+  <div class="left align-right">
+    
+      <span class="prev disabled">Back</span>
+    
+  </div>
+  <div class="right align-left">
+    
+      <span class="next disabled">Next</span>
+    
+  </div>
+  <div class="clear"></div>
+</div>
+
+-->
+  </article>
+  
+
+</div>
+
+<div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+    
+    
+    <h4>Environment</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+      <li class="current"><a href="/dev/home/">Overview</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>Database</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>Test</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>CM</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>Image development&testing</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>Remote Device Management</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+  </aside>
+</div>
+
+
+<div class="clear"></div>
+
+    </div>
+  </section>
+
+  <footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p><script type="text/javascript">
+reformal_wdg_domain    = "ecebook";
+reformal_wdg_mode    = 1;
+reformal_wdg_title   = "SEP Book";
+reformal_wdg_ltitle  = "Any idea? Give them...";
+reformal_wdg_lfont   = "Verdana, Geneva, sans-serif";
+reformal_wdg_lsize   = "11px";
+reformal_wdg_color   = "#FFA000";
+reformal_wdg_bcolor  = "#516683";
+reformal_wdg_tcolor  = "#FFFFFF";
+reformal_wdg_align   = "";
+reformal_wdg_waction = 1;
+reformal_wdg_vcolor  = "#9FCE54";
+reformal_wdg_cmline  = "#E0E0E0";
+reformal_wdg_glcolor  = "#105895";
+reformal_wdg_tbcolor  = "#FFFFFF";
+ 
+reformal_wdg_bimage = "691282f16cc4703dc48466171cb2dd6e.png";
+ 
+</script>
+
+<script type="text/javascript" language="JavaScript" src="http://idea.informer.com/tab6.js?domain=ecebook"></script><noscript><a href="http://ecebook.idea.informer.com">SEP Book feedback </a> <a href="http://idea.informer.com"><img src="http://widget.idea.informer.com/tmpl/images/widget_logo.jpg" /></a></noscript>
+</p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Powered by
+        <a href="http://jekyllrb.com/">
+          <img src="/img/powered-by-jekyll.png" width="100" alt="Jekyll">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
