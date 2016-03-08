@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="某人的笔记">
 <meta property="og:description" content="I am studying MBean following Spring’s document.Srping Framework 2.5 -&amp;gt; Chapter 20. JMX
 123456789101112&amp;lt;bean id=&quot;exporter&quot; class=&quot;org.springframework.jmx.export.MBeanExporter&quot; lazy-init=&quot;false&quot;&amp;">
-<meta property="og:updated_time" content="2016-03-08T09:35:47.367Z">
+<meta property="og:updated_time" content="2016-03-08T09:57:09.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MBean attribute name changed in Glassfish">
 <meta name="twitter:description" content="I am studying MBean following Spring’s document.Srping Framework 2.5 -&amp;gt; Chapter 20. JMX
@@ -227,7 +227,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/08/mbean-attribute-name-changed-in-glassfish/" class="article-date">
-      <time datetime="2016-03-08T09:37:37.833Z" itemprop="datePublished">2016-03-08</time>
+      <time datetime="2016-03-08T09:57:09.398Z" itemprop="datePublished">2016-03-08</time>
 </a>
     </div>
   
@@ -262,7 +262,7 @@
 <p>I created a servlet for retrieve attribute value from MBean, then I deployed my project to Glassfish 4.1.1.</p>
 <p>But I found I cannot get attribute(name, age) value, so I add some statements to print out the actually MBean.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">MBeanServer  mbs=ManagementFactory.getPlatformMBeanServer();</span><br><span class="line">Object value = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Set&lt;ObjectInstance&gt; objectInstances = mbs.queryMBeans(<span class="keyword">new</span> ObjectName(objectName), <span class="keyword">null</span>);</span><br><span class="line">    Iterator&lt;ObjectInstance&gt; objectInstanceIterator = objectInstances.iterator();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (objectInstanceIterator.hasNext()) &#123;</span><br><span class="line">        ObjectInstance objectInstance = objectInstanceIterator.next();</span><br><span class="line">        MBeanInfo info=mbs.getMBeanInfo(objectInstance.getObjectName());</span><br><span class="line">        System.out.println(info);</span><br><span class="line">        value= mbs.getAttribute(objectInstance.getObjectName(), attributeName);    </span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&#125; <span class="keyword">catch</span> ( Exception ex) &#123;</span><br><span class="line">    Logger.getLogger(findJMX.class.getName()).log(Level.SEVERE, <span class="keyword">null</span>, ex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javax.management.modelmbean.ModelMBeanInfoSupport[description=com.kikcn.JmxTestBean, attributes=[</span><br><span class="line"><span class="string">ModelMBeanAttributeInfo:</span> Age ; <span class="string">Description:</span> age ; <span class="string">Types:</span> <span class="typename">int</span> ; <span class="string">isReadable:</span> <span class="literal">true</span> ; <span class="string">isWritable:</span> <span class="literal">true</span> ; <span class="string">Descriptor:</span> descriptorType=attribute, displayName=Age, getMethod=getAge, name=Age, setMethod=setAge, </span><br><span class="line"><span class="string">ModelMBeanAttributeInfo:</span> Name ; <span class="string">Description:</span> name ; <span class="string">Types:</span> java.lang.String ; <span class="string">isReadable:</span> <span class="literal">true</span> ; <span class="string">isWritable:</span> <span class="literal">true</span> ; <span class="string">Descriptor:</span> descriptorType=attribute, displayName=Name, getMethod=getName, name=Name, setMethod=setName], </span><br><span class="line">......</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>Seems not problems. wait, why the first character is capital?<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ModelMBeanAttributeInfo</span>: <span class="string">Age ;</span></span><br><span class="line"><span class="attribute">ModelMBeanAttributeInfo</span>: <span class="string">Name ;</span></span><br></pre></td></tr></table></figure></p>
+<p>Seems have no problems. wait, why the first character is capital?<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ModelMBeanAttributeInfo</span>: <span class="string">Age ;</span></span><br><span class="line"><span class="attribute">ModelMBeanAttributeInfo</span>: <span class="string">Name ;</span></span><br></pre></td></tr></table></figure></p>
 <p>So I use Age, Name as the attribute name, finally, everything is OK now.<br>But I still don’t know why the attributes name changed in Glassfish server.</p>
 
       
@@ -274,8 +274,8 @@
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2016/03/08/mbean-attribute-name-changed-in-glassfish/">MBean attribute name changed in Glassfish</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Yubin Lai 的个人博客">Yubin Lai</a></p>
-        <p><span>发布时间:</span>2016年03月08日 - 17时37分</p>
-        <p><span>最后更新:</span>2016年03月08日 - 17时35分</p>
+        <p><span>发布时间:</span>2016年03月08日 - 17时57分</p>
+        <p><span>最后更新:</span>2016年03月08日 - 17时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/08/mbean-attribute-name-changed-in-glassfish/" title="MBean attribute name changed in Glassfish">http://www.kikcn.com/2016/03/08/mbean-attribute-name-changed-in-glassfish/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.kikcn.com/2016/03/08/mbean-attribute-name-changed-in-glassfish/　　作者: Yubin Lai" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
